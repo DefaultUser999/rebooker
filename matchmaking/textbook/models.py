@@ -1,25 +1,19 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import AbstractUser
 
-# Create your models here.
+class CustomUser(AbstractUser):
+    # add additional fields in here
 
-class User(models.Model):
-    # ID - Primary key
-    # each user must have a unique email
-    email = models.EmailField(max_length=254)
-    firstname = models.CharField(max_length=50)
-    lastname = models.CharField(max_length=50)
+    def __str__(self):
+        return self.email
 
-class item:
-    # ID - Primary Key
-    # maybe have the textbook name plus and
-    # interger to allow for multiple books of the same name
-
+class Item:
+    seller = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE
+    )
     name = models.CharField(max_length=100)
     author = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    # used to check if textbook is sold or not
-    # true == sold
-    status_sold = models.BooleanField(default=False)
-    # foreign key
-    # references the user model class
-    seller = models.ForeignKey(User, on_delete=models.CASCADE)
+    status_sold = models.BooleanField(default=False) # used to check if textbook is sold or not : true == sold
