@@ -28,9 +28,9 @@ TBD
 python /path/to/manage.py runserver
 ```
 ## Contributors
-s3545751 Shawn Taylor  
-s3599768 Jeffrey Lee  
-s3629491 Elwyn Leung  
+s3545751 Shawn Taylor\
+s3599768 Jeffrey Lee\
+s3629491 Elwyn Leung\
 s3283914 Xiaoxi Zhang
 
 ## License
