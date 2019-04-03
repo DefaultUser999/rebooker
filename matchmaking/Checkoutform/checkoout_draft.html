@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form>
+    <fieldset>
+        <legend>Client's information</legend>
+        <label>
+            Name:
+            <input name="name" id="name" required pattern="^[a-z ,.'-]+$">
+        </label>
+        <br>
+        <br>
+        <label> 
+            Email:
+            <input type="email" name="email" id="email" required>
+        </label>
+        <br>
+        <br>
+        <label>
+            Mobile number:
+            <input name="phone" id="phone" required pattern="^(\(04\)|04|\+614)([ ]?\d){8}$">
+        </label>
+        <br>
+        <br>
+        <label>
+            Shipping Adressing:
+            <input name="address" id="address">
+        </label>
+        <p>
+        <label>Shipping Method
+            <select name='Shipping method'>
+                <option value='Parcel Post'>Austrlian Post Parcel Post</option>
+                <option value='Express Post'>Austrlian Post Express Post</option>
+                <option value='Courier Post'>Austrlian Post Courier Post</option>
+                <option value='StarTrack Courier'>Austrlian Post StarTrack Courier</option>
+            </select>
+        </label>
+        <br>
+        <br>
+        <Label>Post Code
+            <input type="text" pattern="[0-9]{4}" title="Four digit post code" />
+        </Label>
+        </p>
+    </fieldset>
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+</form>
+
+</body>
+</html>
