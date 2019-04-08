@@ -1,37 +1,199 @@
 @import "./common";
 @import "@material/textfield/mdc-text-field";
 @import "@material/button/mdc-button";
+@import "@material/drawer/mdc-drawer";
+@import "@material/list/mdc-list";
+@import "@material/image-list/mdc-image-list";
+@import "@material/ripple/mixins";
+@import "@material/typography/mdc-typography";
+@import "@material/elevation/mdc-elevation";
 
 .header {
-  text-align: center;
+    text-align: left;
+    padding: 0 0 20px;
 }
 
-.shrine-logo {
-  width: 150px;
-  height: 150px;
-  padding-top: 80px;
-  fill: currentColor;
+.jasex-title {
+    @include mdc-typography(headline4);
+    text-align: center;
+    margin: 5px auto;
+    display: block;
+    padding: 40px 0 0;
+    color: white;
+}
+
+.jasex-drawer {
+    @include mdc-drawer-fill-color-accessible(primary);
+    // Drawer defaults to a higher z-index, but we aren't overlaying it over anything
+    @include mdc-drawer-z-index(0);
+
+    text-transform: uppercase;
+
+    .mdc-list {
+        margin: 70px 5px auto 5px;
+    }
+
+    .mdc-list-item {
+        border-radius: 6px;
+        justify-content: center;
+    }
+
+    // This needs 3-class specificity to override MDC Drawer styles
+    .mdc-list .mdc-list-item {
+        @include mdc-states-activated(#fff);
+    }
+}
+
+.jasex-select-item-divider {
+    display: block;
+    border-bottom-color: #FFFFFF;
+    border-bottom-width: 2px;
+    width: 50px;
+    position: relative;
+    top: -8px;
+}
+
+.jasex-drawer .jasex-select-item-divider {
+    margin: 0 auto;
 }
 
 .username,
 .password {
-  display: block;
-  width: 300px;
-  margin: 20px auto;
+    display: block;
+    width: 300px;
+    margin: 20px auto;
 }
 
 .button-container {
-  display: flex;
-  justify-content: flex-end;
-  width: 300px;
-  margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    width: 300px;
+    margin: auto;
 }
 
 .button-container button {
-  margin: 3px;
+    margin: 3px;
 }
 
-.shrine-login {
-  background-color: $mdc-theme-background;
-  color: $mdc-theme-on-background;
+.jasex-login {
+    background: #eee;
+    display: flex;
+  
+}
+
+.logintest {
+    width: 380px;
+	margin: 4em auto;
+	padding: 3em 2em 2em 2em;
+	background: #fafafa;
+	border: 1px solid #ebebeb;
+	box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+}
+
+.group { 
+	position: relative; 
+	margin-bottom: 45px; 
+}
+
+input {
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	-webkit-appearance: none;
+	display: block;
+	background: #fafafa;
+	color: #636363;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #757575;
+}
+
+input:focus { outline: none; }
+
+
+/* Label */
+
+label {
+	color: #999; 
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: all 0.2s ease;
+}
+
+
+/* active */
+
+input:focus ~ label, input.used ~ label {
+	top: -20px;
+  transform: scale(.75); left: -2px;
+	/* font-size: 14px; */
+	color: #4a89dc;
+}
+
+
+/* Underline */
+
+.bar {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+.bar:before, .bar:after {
+	content: '';
+	height: 2px; 
+	width: 0;
+	bottom: 1px; 
+	position: absolute;
+	background: #4a89dc; 
+	transition: all 0.2s ease;
+}
+
+.bar:before { left: 50%; }
+
+.bar:after { right: 50%; }
+
+
+/* active */
+
+input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
+
+
+/* Highlight */
+
+.highlight {
+	position: absolute;
+	height: 60%; 
+	width: 100px; 
+	top: 25%; 
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+
+/* active */
+
+input:focus ~ .highlight {
+	animation: inputHighlighter 0.3s ease;
+}
+
+
+/* Animations */
+
+@keyframes inputHighlighter {
+	from { background: #4a89dc; }
+	to 	{ width: 0; background: transparent; }
+}
+
+.pass-forgot {
+    padding: 15px 0 0;
+    width: 100%;
+    float: left;
+    color: #00152E;
+    font-size: 16px;
 }

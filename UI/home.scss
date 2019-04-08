@@ -8,20 +8,16 @@
 
 .home {
   display: flex; // Flexbox is used to easily arrange the persistent drawer and content side-by-side
+  background: #eee;
 }
 
-.shrine-logo-drawer {
-  display: block;
-  width: 48px;
-  padding: 40px 0 0;
-  margin: 0 auto;
-  fill: currentColor;
-}
-
-.shrine-title {
+.jasex-title {
   @include mdc-typography(headline4);
   text-align: center;
   margin: 5px auto;
+  display: block;
+  padding: 40px 0 0;
+  color: white;
 }
 
 .product-list {
@@ -43,7 +39,7 @@
 
 }
 
-.shrine-drawer {
+.jasex-drawer {
   @include mdc-drawer-fill-color-accessible(primary);
   // Drawer defaults to a higher z-index, but we aren't overlaying it over anything
   @include mdc-drawer-z-index(0);
@@ -65,7 +61,7 @@
   }
 }
 
-.shrine-select-item-divider {
+.jasex-select-item-divider {
   display: block;
   border-bottom-color: #FFFFFF;
   border-bottom-width: 2px;
@@ -75,11 +71,11 @@
 }
 
 // This needs 2-class specificity to override MDC Drawer styles
-.shrine-drawer .shrine-select-item-divider {
+.jasex-drawer .jasex-select-item-divider {
   margin: 0 auto;
 }
 
-.shrine-body {
+.jasex-body {
   @include mdc-elevation(4);
 
   display: block;

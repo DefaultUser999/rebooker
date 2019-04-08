@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JASEX login</title>
+    <link rel="shortcut icon" href="https://material.io/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="bundle-login.css">
+</head>
+<body class="jasex-login">
+    <aside class="mdc-drawer jasex-drawer">
+        <div class="mdc-drawer__header">
+          <h1 class="jasex-title">JASEX</h1>
+        </div>
+        <div class="mdc-drawer__content">
+          <nav class="mdc-list">
+            <a class="mdc-list-item mdc-list-item--activated" aria-selected="true" tabindex="0" href="#">
+              <span class="mdc-list-item__text">FEATURED</span>
+            </a>
+            <div class="jasex-select-item-divider mdc-list-divider" role="separator"></div>
+            <a class="mdc-list-item" href="#">
+              <span class="mdc-list-item__text">BUY</span>
+            </a>
+            <a class="mdc-list-item" href="#">
+              <span class="mdc-list-item__text">SELL</span>
+            </a>
+            <a class="mdc-list-item" href="#">
+              <span class="mdc-list-item__text">CART</span>
+            </a>
+            <a class="mdc-list-item" href="#">
+              <span class="mdc-list-item__text">My Account</span>
+            </a>
+          </nav>
+        </div>
+    </aside>
+    
+    <form action="home.html" class="logintest">
+    <section class="header">
+    <h1>LOGIN</h1>
+    </section>
+        <div class="group">
+            <input type="text" class="mdc-text-field__input" id="username-input" name="username" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label class="mdc-floating-label" for="username-input">Username</label>
+            <div class="mdc-line-ripple"></div>
+        </div>
+        <div class="group">
+            <input type="password" class="mdc-text-field__input" id="password-input" name="password" required minlength="8">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label class="mdc-floating-label" for="password-input">Password</label>
+            <div class="mdc-line-ripple"></div>            
+        </div>
+        <div class="button-container">
+            <button type="button" class="mdc-button cancel">
+                <span class="mdc-button__label">
+                  Cancel
+                </span>
+            </button>
+            <button class="mdc-button mdc-button--raised next">
+                <span class="mdc-button__label">
+                  LOGIN
+                </span>
+            </button>
+        </div>
+        </div>
+            <a href="" class="pass-forgot">Forgot your password?</a>
+        </div>
+    </form>
+
+    <script src="bundle-login.js" async></script>
+</body>
+</html>
