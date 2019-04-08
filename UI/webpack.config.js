@@ -47,6 +47,19 @@ module.exports = [
     },
   },
   {
+    entry: './signup.scss',
+    output: {
+      // This is necessary for webpack to compile, but we never reference this js file.
+      filename: 'style-bundle-signup.js',
+    },
+    module: {
+      rules: [{
+        test: /signup.scss$/,
+        use: getStyleUse('bundle-signup.css')
+      }]
+    },
+  },
+  {
     entry: "./login.js",
     output: {
       filename: "bundle-login.js"
@@ -67,6 +80,19 @@ module.exports = [
     module: {
       loaders: [{
         test: /home.js$/,
+        loader: 'babel-loader',
+        query: {presets: ['env']}
+      }]
+    },
+  },
+  {
+    entry: "./signup.js",
+    output: {
+      filename: "bundle-signup.js"
+    },
+    module: {
+      loaders: [{
+        test: /signup.js$/,
         loader: 'babel-loader',
         query: {presets: ['env']}
       }]
