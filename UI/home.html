@@ -8,14 +8,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" href="bundle-home.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body class="home">
     <aside class="mdc-drawer jasex-drawer">
         <div class="mdc-drawer__header">
-          <h1 class="jasex-title">JASEX</h1>
+            <h1 class="jasex-title">JASEX</h1>
         </div>
-        <div class="mdc-drawer__content">
-          <nav class="mdc-list">
+        <div class="mdc-drawer__content">   
+            <nav class="mdc-list">
+          
+            <div class="search-input">
+                <input type="text">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Search here</label>
+                <span class="material-icons">search</span>
+                <span class="material-icons">close</span>
+            </div>
+          
             <a class="mdc-list-item mdc-list-item--activated" aria-selected="true" tabindex="0" href="#">
               <span class="mdc-list-item__text">FEATURED</span>
             </a>
@@ -35,6 +46,7 @@
           </nav>
         </div>
     </aside>
+    
     <div class="jasex-body">
         <ul class="mdc-image-list product-list">
             <li class="mdc-image-list__item">
