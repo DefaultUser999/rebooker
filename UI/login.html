@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" href="bundle-login.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body class="jasex-login">
     <aside class="mdc-drawer jasex-drawer">
@@ -16,6 +17,16 @@
         </div>
         <div class="mdc-drawer__content">
           <nav class="mdc-list">
+            
+            <div class="search-input">
+                <input type="text">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Search here</label>
+                <span class="material-icons">search</span>
+                <span class="material-icons">close</span>
+            </div>
+          
             <a class="mdc-list-item mdc-list-item--activated" aria-selected="true" tabindex="0" href="#">
               <span class="mdc-list-item__text">FEATURED</span>
             </a>
@@ -54,6 +65,9 @@
             <label class="mdc-floating-label" for="password-input">Password</label>
             <div class="mdc-line-ripple"></div>            
         </div>
+        </div>
+            <a href="" class="pass-forgot">Forgot your password?</a>
+        </div>
         <div class="button-container">
             <button type="button" class="mdc-button cancel">
                 <span class="mdc-button__label">
@@ -66,9 +80,7 @@
                 </span>
             </button>
         </div>
-        </div>
-            <a href="" class="pass-forgot">Forgot your password?</a>
-        </div>
+        
     </form>
 
     <script src="bundle-login.js" async></script>

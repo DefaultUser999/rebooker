@@ -8,31 +8,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" href="bundle-signup.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body class="jasex-signup">
     <aside class="mdc-drawer jasex-drawer">
         <div class="mdc-drawer__header">
-          <h1 class="jasex-title">JASEX</h1>
+            <h1 class="jasex-title">JASEX</h1>
         </div>
         <div class="mdc-drawer__content">
-          <nav class="mdc-list">
-            <a class="mdc-list-item mdc-list-item--activated" aria-selected="true" tabindex="0" href="#">
-              <span class="mdc-list-item__text">FEATURED</span>
-            </a>
-            <div class="jasex-select-item-divider mdc-list-divider" role="separator"></div>
-            <a class="mdc-list-item" href="#">
-              <span class="mdc-list-item__text">BUY</span>
-            </a>
-            <a class="mdc-list-item" href="#">
-              <span class="mdc-list-item__text">SELL</span>
-            </a>
-            <a class="mdc-list-item" href="#">
-              <span class="mdc-list-item__text">CART</span>
-            </a>
-            <a class="mdc-list-item" href="#">
-              <span class="mdc-list-item__text">My Account</span>
-            </a>
-          </nav>
+            <nav class="mdc-list">
+            
+                <div class="search-input">
+                    <input type="text">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Search here</label>
+                    <span class="material-icons">search</span>
+                    <span class="material-icons">close</span>
+                </div>
+          
+                <a class="mdc-list-item mdc-list-item--activated" aria-selected="true" tabindex="0" href="#">
+                  <span class="mdc-list-item__text">FEATURED</span>
+                </a>
+                <div class="jasex-select-item-divider mdc-list-divider" role="separator"></div>
+                <a class="mdc-list-item" href="#">
+                  <span class="mdc-list-item__text">BUY</span>
+                </a>
+                <a class="mdc-list-item" href="#">
+                  <span class="mdc-list-item__text">SELL</span>
+                </a>
+                <a class="mdc-list-item" href="#">
+                  <span class="mdc-list-item__text">CART</span>
+                </a>
+                <a class="mdc-list-item" href="#">
+                  <span class="mdc-list-item__text">My Account</span>
+                </a>
+            </nav>
         </div>
     </aside>
     
@@ -83,8 +94,7 @@
             </div>
         </div>
         <div class="right">
-            <span class="loginwith">Sign in with<br />social network</span>
-
+            <button class="social-signin jasex">Log in with a Jasex account</button>
             <button class="social-signin facebook">Log in with facebook</button>
             <button class="social-signin twitter">Log in with Twitter</button>
             <button class="social-signin google">Log in with Google+</button>
