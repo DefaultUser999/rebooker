@@ -13,3 +13,7 @@ class SignUp(generic.CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'signup.html'
+
+def sell(request):
+    template_name = 'sell.html'
+    return render(request, 'sell.html')
