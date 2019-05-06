@@ -1,10 +1,9 @@
 # textbook/views.py
 
 from django.contrib import messages
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
-
 from .forms import CustomUserCreationForm, SellItemForm
 
 from .models import Item
@@ -37,3 +36,28 @@ def sell(request):
         "form" : my_form
     }
     return render(request, 'sell.html', context)
+
+#  TODO: Buy View
+#  need to load in the item which we want to buy,
+#  the user logged in, as they will be the buyer
+#  and update the item information of submission of the form
+#  ie: POST
+
+# /textbook/buy/item_id
+def buy(request, item_id):
+    template_name = 'buy.html'
+    if request.method == "GET":
+        item = get_object_or_404(Item, pk=item_id)
+        my_form = BuyItemForm(request.POST or None, instance=item)
+        if my_form.is_valid():
+            item = my_form.save(commit=False)
+            item.buyer = request.user
+            item.status_sold=true
+            item.save()
+            return redirect('home')
+
+    context = {
+        'item' : item,
+        'form' : my_form
+    }
+    return render(request, 'buy.html', context)
