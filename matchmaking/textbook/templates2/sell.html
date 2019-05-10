@@ -1,0 +1,14 @@
+<!-- templates/sell.html -->
+{% extends 'base.html' %}
+
+{% block title %}Sell{% endblock %}
+
+{% block content %}
+<h2>Sell Textbook</h2>
+<form method="post">
+    <div>
+        Title: <input type="text" name="title">
+    </div>
+  <button type="submit">submit</button>
+</form>
+{% endblock %}
