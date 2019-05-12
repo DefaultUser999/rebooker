@@ -32,14 +32,8 @@ class SellItemForm(ModelForm):
     # name = forms.CharField(label='name', widget=forms.TextInput( attrs={"placeholder": "Your title" }))
     # def is_valid():
 
-class BuyItemForm(forms.ModelForm):
+class BuyItemForm(ModelForm):
     class Meta:
         model = Item
-        fields = [
-            'name',
-            'author',
-            'price'
-        ]
-        widget = {
-
-        }
+        fields = []
+        widget = {}

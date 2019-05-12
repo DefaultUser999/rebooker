@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
-from .forms import CustomUserCreationForm, SellItemForm
+from .forms import CustomUserCreationForm, SellItemForm, BuyItemForm
 
 from .models import Item
 
@@ -46,18 +46,23 @@ def sell(request):
 # /textbook/buy/item_id
 def buy(request, item_id):
     template_name = 'buy.html'
+    item = get_object_or_404(Item, pk=item_id)
     if request.method == "GET":
-        item = get_object_or_404(Item, pk=item_id)
-        my_form = BuyItemForm(request.POST or None, instance=item)
-        if my_form.is_valid():
-            item = my_form.save(commit=False)
+        form = BuyItemForm(request.GET)
+    elif request.method == "POST":
+        form = BuyItemForm(request.POST)
+        if form.is_valid() :
             item.buyer = request.user
-            item.status_sold=true
+            item.status_sold=True
             item.save()
+            messages.success(request, 'Item has been purchased with success!')
             return redirect('home')
+        else :
+            messages.error(request, 'Ops! Something went wrong')
+        return redirect('buy')
 
     context = {
         'item' : item,
-        'form' : my_form
+        'form' : form
     }
     return render(request, 'buy.html', context)
