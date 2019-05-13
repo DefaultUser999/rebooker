@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}About{% endblock %}
+{% block navbar-links %}
+	<li><a href="{% url 'index' %}">Home</a></li>
+	<li><a href="{% url 'featured' %}">Featured</a></li>
+	<li class="active" ><a href="{% url 'about' %}">About</a></li>
+	<li><a href="{% url 'contact' %}">Contact</a></li>
+	<li><a href="{% url 'login' %}">Log in</a></li>
+	<li class="cart"><a href="{% url 'cart' %}"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+{% endblock %}
+{% block content %}
+	{% load static %}
+	<div class="breadcrumbs">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<p class="bread"><span><a href="../index">Home</a></span> / <span>About</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="colorlib-about">
+		<div class="container">
+			<div class="row row-pb-lg">
+				<div class="col-sm-6 mb-3">
+					<img src="{% static 'textbook/images/about.jpg' %}" class="img-fluid">
+				</div>
+				<div class="col-sm-6">
+					<div class="about-wrap">
+						<h2>Jasex</h2>
+						<h3>The matchmaking textbook site</h3>
+						<p>Lorem ipsum dolor sit amet, pri id fastidii appetere, mea impetus complectitur mediocritatem ut, falli iudico veniam eu sed. Et zril albucius copiosae nam, semper noluisse rationibus cu sit. An cum diam regione, consul gloriatur an sit, odio mundi munere nec et. Ad has fabellas prodesset, his in iudico soleat abhorreant.</p>
+						<p>Vel saepe ceteros definitionem et. Volumus nominavi recusabo ne cum. Viris epicuri eleifend ei has, sed graece signiferumque ei. Nostro dictas diceret no has, vim eu erant tincidunt. Sed eros tation at. Has ceteros recusabo ut, ex est postea habemus accusam.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
