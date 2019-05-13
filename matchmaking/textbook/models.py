@@ -10,7 +10,7 @@ class CustomUser(AbstractUser):
         return self.email
 
 class Item(models.Model):
-    seller = models.OneToOneField(
+    seller = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
         related_name='user_selling_item'
@@ -21,12 +21,12 @@ class Item(models.Model):
     author = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     status_sold = models.BooleanField(default=False) # used to check if textbook is sold or not : true == sold
-    buyer = models.OneToOneField(
+    buyer = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
+        related_name='user_buying_item',
         # primary_key=False
-        null=True,
-        related_name='user_buying_item'
+        null=True
     )
     # title = models.CharField(max_length=100)
     # description = models.TextField(blank=True, null=True)
