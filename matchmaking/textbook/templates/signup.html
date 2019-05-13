@@ -1,6 +1,14 @@
 <!-- templates/signup.html -->
 {% extends 'base.html' %}
 {% block title %}Sign Up{% endblock %}
+{% block navbar-links %}
+	<li><a href="{% url 'index' %}">Home</a></li>
+	<li><a href="{% url 'featured' %}">Featured</a></li>
+	<li><a href="{% url 'about' %}">About</a></li>
+	<li><a href="{% url 'contact' %}">Contact</a></li>
+	<li><a href="{% url 'login' %}">Log in</a></li>
+	<li class="cart"><a href="{% url 'cart' %}"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+{% endblock %}
 {% block content %}
 	{% load static %}
 	<div class="breadcrumbs">
