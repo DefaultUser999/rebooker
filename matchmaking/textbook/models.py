@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AbstractUser
+from django.urls import reverse
+#Reference https://academy.muva.tech/blog/?s=Django+2.
 
 class CustomUser(AbstractUser):
     # add additional fields in here
@@ -22,6 +24,9 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('textbook:product_list_by_category', args=[self.slug])
+
 
 class Product(models.Model):
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
@@ -41,3 +46,6 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+        
+    def get_absolute_url(self):
+        return reverse('textbook:product_detail', args=[self.id, self.slug])
