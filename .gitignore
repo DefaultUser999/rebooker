@@ -11,6 +11,5 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-
 #  python enviroments
 my_env/
