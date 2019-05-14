@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
 from .forms import CustomUserCreationForm, SellItemForm, BuyItemForm
-
+from django.contrib.auth.decorators import login_required
 from .models import Item
 
 class SignUp(generic.CreateView):
@@ -99,3 +99,18 @@ def buy(request, item_id):
     }
     return render(request, 'buy.html', context)
 
+@login_required
+def transaction_history(request):
+    template_name = 'transaction_history.html'
+    user = request.user
+    items_purchased = Item.objects.filter(buyer=user)
+    items_sold = Item.objects.filter(seller=user)
+    print(items_purchased)
+    print(items_sold)
+
+    context = {
+        'user' : user,
+        'items_purchased': items_purchased,
+        'items_sold': items_sold
+    }
+    return render(request, 'transaction_history.html', context)
