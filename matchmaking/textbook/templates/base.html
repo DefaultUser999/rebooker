@@ -61,6 +61,15 @@
     <main>
       <div class="colorlib-loader"></div>
       <div id="page">
+
+        {% if messages %}
+          {% for message in messages %}
+            <div {% if message.tags %} class="alert alert-{{ message.tags }} alert-dismissible fade show" {% endif %}>
+                <span>{{ message }}</span>
+            </div>
+            {% endfor %}
+        {% endif %}
+
         <nav class="colorlib-nav" role="navigation">
           <div class="top-menu">
             <div class="container">
