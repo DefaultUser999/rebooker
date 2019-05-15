@@ -12,6 +12,7 @@
 {% endblock %}
 
 {% block content %}
+    {% load static %}
     <div class="breadcrumbs">
         <div class="container">
             <div class="row">
@@ -21,24 +22,53 @@
             </div>
         </div>
     </div>
-
-    <h2>Transaction History</h2>
-    <h3>Items Purchased<h3>
-    {% if items_purchased %}
-            {% for purchased in items_purchased %}
-            <p>{{purchased.id}}, {{purchased.name}}, {{purchased.price}}<br>-------------</p>
-            {% endfor %}
-    {% else %}
-        <p>No items purchased yet</p>
-    {% endif%}
-    <h3>Items Sold<h3>
-    {% if items_sold %}
-            {% for sold in items_sold %}
-                <p>{{sold.id}}, {{sold.name}}, {{sold.price}}<br>-------------</p>
-            {% endfor %}
-        <h3><h3>
-    {% else %}
-        <p>No items sold yet</p>
-    {% endif%}
-
+    
+    <div class="breadcrumbs-two">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="breadcrumbs-img" style="background-image: url({% static 'textbook/images/transaction.jpg' %});">
+						<h2>Transaction History</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    <div class="breadcrumbs"></div>
+    
+    <div id="colorlib-signup">
+		<div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-wrap">
+                        <h3>Items Purchased<h3>
+                        {% if items_purchased %}
+                                {% for purchased in items_purchased %}
+                                <p>{{purchased.id}}, {{purchased.name}}, {{purchased.price}}<br>-------------</p>
+                                {% endfor %}
+                        {% else %}
+                            <h4>No items purchased yet</h4>
+                        {% endif%}
+                    </div>
+                </div>
+            
+                <div class="col-md-6">
+                    <div class="or">
+                        <div class="contact-wrap">
+                            <h3>Items Sold<h3>
+                            {% if items_sold %}
+                                    {% for sold in items_sold %}
+                                        <p>{{sold.id}}, {{sold.name}}, {{sold.price}}<br>-------------</p>
+                                    {% endfor %}
+                                <h3><h3>
+                            {% else %}
+                                <h4>No items sold yet</h4>
+                            {% endif%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
