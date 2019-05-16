@@ -1,0 +1,11 @@
+{% if products %}
+
+{% for p in products %}
+    <div>
+    {{p.name}} 
+    </div>
+{% endfor %}
+
+{% else %}
+<p>no products</p>
+{% endif %}
