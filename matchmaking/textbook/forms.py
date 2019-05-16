@@ -1,9 +1,7 @@
 # textbook/forms.py
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import CustomUser, Item
-
-from django.forms import ModelForm
+from .models import CustomUser
 
 class CustomUserCreationForm(UserCreationForm):
 
@@ -16,24 +14,3 @@ class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = CustomUser
         fields = ('username', 'email')
-
-class SellItemForm(ModelForm):
-    class Meta:
-        model = Item
-        fields = [
-            'name', # title
-            'author',
-            'price'
-            # title
-        ]
-        widget = {
-            'name': forms.TextInput( attrs={"placeholder": "Your title" } ),
-            }
-    # name = forms.CharField(label='name', widget=forms.TextInput( attrs={"placeholder": "Your title" }))
-    # def is_valid():
-
-class BuyItemForm(ModelForm):
-    class Meta:
-        model = Item
-        fields = []
-        widget = {}

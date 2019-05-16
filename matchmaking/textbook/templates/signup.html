@@ -1,70 +1,13 @@
 <!-- templates/signup.html -->
 {% extends 'base.html' %}
-{% block title %}Sign Up{% endblock %}
-{% block navbar-links %}
-	<li><a href="{% url 'index' %}">Home</a></li>
-	<li><a href="{% url 'featured' %}">Featured</a></li>
-	<li><a href="{% url 'about' %}">About</a></li>
-	<li><a href="{% url 'contact' %}">Contact</a></li>
-	<li><a href="{% url 'login' %}">Log in</a></li>
-	<li class="cart"><a href="{% url 'cart' %}"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
-{% endblock %}
-{% block content %}
-	{% load static %}
-	<div class="breadcrumbs">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<p class="bread"><span><a href="../index">Home</a></span> / <span>Sign up</span></p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="colorlib-signup">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="contact-wrap">
-							<h3>Sign up</h3>
-							<form method="post" class="signup-form">
-								<div class="row">
-                                    {% csrf_token %}
-                                    {{ form.as_p }}
-									<div class="w-100"></div>
-									<div class="col-sm-12">
-										<div class="form-group">
-											<input type="submit" value="Sign Up" class="btn btn-primary">
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-                    <div class="col-md-6">
-						<div class="or">
-                            <div class="contact-wrap">
-                                <h3>Already have an account?</h3>
-                                <form action="../login" class="login-form">
-                                    <div class="w-100"></div>
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <input type="submit" value="LOG IN HERE" class="btn btn-primary">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-					</div>
-				</div>
-			</div>
-		</div>
-{% endblock %}
 
-{% comment %}
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<h2>Sign up</h2>
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit">Sign up</button>
 </form>
-{% endcomment %}
+{% endblock %}
