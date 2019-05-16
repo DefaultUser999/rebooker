@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap4'
 ]
 
 MIDDLEWARE = [
@@ -125,9 +124,6 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'textbook.CustomUser'
 
 # where site redirects after login and log out
-
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'products/')
