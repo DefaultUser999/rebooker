@@ -5,11 +5,10 @@
 {% endblock %}
 
 {% block content %}
-   <div class="container">
       <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/default.png' %} {% endif %}" alt="..." style="height: 200px; width: auto">
       <h3>{{ product.name }}</h3>
       <h6><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h6>
       <p class="">Price: {{ product.price }}</p>
       <p class ="">Condition: {{ product.condition }}</p>
-    </div>
+
 {% endblock %}
