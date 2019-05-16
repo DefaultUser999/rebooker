@@ -1,0 +1,30 @@
+<!-- templates/sell.html -->
+{% extends 'base.html' %}
+
+{% block title %}Buy{% endblock %}
+
+{% block content %}
+
+{% if item %}
+<p> debug- item has been loaded</p>
+<p> {{item.name}} </p>
+<h2>buy Textbook</h2>
+<form action='.' method="POST">
+  {% csrf_token %}
+  <!-- form printed as p: paragraph  -->
+  {{ form.as_p }}
+  <button type="submit">submit</button>
+</form>
+
+{% endif %}
+
+{% comment %} form to update model {% endcomment %}
+
+
+{% endblock %}
+
+{% comment %}
+
+<li><a href="{% url 'polls:detail' item.id %}">{{item}}</a></li>
+
+{% endcomment %}
