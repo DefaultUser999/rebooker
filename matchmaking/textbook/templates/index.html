@@ -24,15 +24,11 @@
 									<h2 class="head-2">JASEX's</h2>
 									<h2 class="head-3">Matchmaking</h2>
 									<p class="category"><span>Textbook library</span></p>
-									<p>
-										<form action="#" class="search-wrap">
-											<div class="form-group">
-												<input type="search" class="form-control search" placeholder="Search"></p>
-												<p><button class="btn btn-primary submit-search text-center" type="submit"><i class="icon-search"></i> Search</button>
-											</div>
-										</form>
-									</p>
 								</div>
+                                <form class="search" action="{% url 'result' %}">
+                                    <input type="search" placeholder="Search here...">
+                                    <button type="submit"><i class="icon-search"> </i>SEARCH</button>
+                                </form>   
 							</div>
 						</div>
 					</div>

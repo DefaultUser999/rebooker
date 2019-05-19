@@ -114,3 +114,7 @@ def transaction_history(request):
         'items_sold': items_sold
     }
     return render(request, 'transaction_history.html', context)
+    
+def Result(request):
+    template_name = 'result.html'
+    return render(request, 'result.html')

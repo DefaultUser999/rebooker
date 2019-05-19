@@ -2,7 +2,7 @@
 {% block title %}{% endblock %}
 {% block navbar-links %}
 	<li><a href="{% url 'index' %}">Home</a></li>
-	<li class="active" ><a href="{% url 'featured' %}">Featured</a></li>
+	<li><a href="{% url 'featured' %}">Featured</a></li>
 	<li><a href="{% url 'about' %}">About</a></li>
 	<li><a href="{% url 'contact' %}">Contact</a></li>
 	<li><a href="{% url 'login' %}">Log in</a></li>
@@ -15,7 +15,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<p class="bread"><span><a href="../index">Home</a></span> / <span>Featured</span></p>
+					<p class="bread"><span><a href="../index">Home</a></span> / <span>Search Results</span></p>
 				</div>
 			</div>
 		</div>
@@ -26,16 +26,16 @@
 			<div class="row">
 				<div class="col">
 					<div class="breadcrumbs-img" style="background-image: url({% static 'textbook/images/cover-img-1.jpg' %});">
-						<h2>Featured</h2>
+						<h2>Search Results</h2>
 					</div>
-					<div class="menu text-center">
-						<p><a href="#">New Arrivals</a> <a href="#">Best Sellers</a> <a href="#">Sale</a></p>
-					</div>
+					<!-- <div class="menu text-center"> -->
+						
+					<!-- </div> -->
 				</div>
 			</div>
 		</div>
 	</div>
-
+    
     <div class="breadcrumbs">
         <div class="container">
 			<div class="row">
