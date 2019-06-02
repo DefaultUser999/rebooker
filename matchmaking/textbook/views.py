@@ -35,7 +35,12 @@ def Featured(request):
     
 def Index(request):
     template_name = 'index.html'
-    return render(request, 'index.html')
+    items = Item.objects.filter(status_sold=False)
+    print(items)
+    context = {
+        "items" : items
+    }
+    return render(request, 'index.html',context)
 
 def OrderComplete(request):
     template_name = 'order-complete.html'
