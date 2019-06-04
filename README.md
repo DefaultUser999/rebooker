@@ -1,5 +1,6 @@
 # Programming Project 1 2019 RMIT
-A matchmaking project for univeristy students to buy and sell textbooks.
+Rebooker!
+A matchmaking marketplace for univeristy students to buy and sell textbooks.
 
 ## Getting Started
 
@@ -8,6 +9,7 @@ Works on Mac, Windows and Linux systems with:
 * python version 3.7
 * pip version 19
 * git
+* ElecticSearch
 
 ### Basic Installation
 Use of virtual environment is recommended
@@ -20,13 +22,12 @@ cd programmingproject1
 pip install -r /path/to/requirements.txt
 ```
 #### Windows
-```
-TBD
-```
+Windows should work the same as the Mac/Linux installation but using the appropiate cmd/powershell commands
 ### Test site
 ```
 python /path/to/manage.py runserver
 ```
+Then open your browser and navigate to http://localost:8000/
 ## Contributors
 s3545751 Shawn Taylor\
 s3599768 Jeffrey Lee\
