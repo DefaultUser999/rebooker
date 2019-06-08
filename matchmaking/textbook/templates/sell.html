@@ -1,16 +1,69 @@
 <!-- templates/sell.html -->
 {% extends 'base.html' %}
-
 {% block title %}Sell{% endblock %}
-
+{% block navbar-links %}
+	<li><a href="{% url 'index' %}">Home</a></li>
+	<li><a href="{% url 'featured' %}">Featured</a></li>
+	<li><a href="{% url 'about' %}">About</a></li>
+	<li><a href="{% url 'contact' %}">Contact</a></li>
+	<li class="cart"><a href="{% url 'cart' %}"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+    <li class="cart"><a href="{% url 'login' %}">Log in</a></li>
+{% endblock %}
 {% block content %}
-
-
-<h2>Sell Textbook</h2>
-<form action='.' method="POST">
-  {% csrf_token %}
-  <!-- form printed as p: paragraph  -->
-  {{ form.as_p }}
-  <button type="submit">submit</button>
-</form>
+    {% load static %}
+	<div class="breadcrumbs">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<p class="bread"><span><a href="../index">Home</a></span> / <span>Sell</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    <div class="breadcrumbs-two">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="breadcrumbs-img" style="background-image: url({% static 'textbook/images/sell.jpg' %});">
+						<h2>Sell Textbook</h2>
+					</div>
+					<!-- <div class="menu text-center"> -->
+						
+					<!-- </div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    <div id="colorlib-contact">
+		<div class="container">
+            <div class="row">
+                <div class="col-md-6">
+					<div class="contact-wrap">
+						<h3>Sell Textbook</h3>
+						<form action="#" class="contact-form">
+							<div class="row">
+                                <form action='.' method="POST">
+                                    <div>
+                                      {% csrf_token %}
+                                    </div>
+                                      <!-- form printed as p: paragraph  -->
+                                    <div>
+                                      {{ form.as_p }}
+                                    </div>
+                                    <div class="w-100"></div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input type="submit" value="Submit" class="btn btn-primary">
+                                        </div>
+                                    </div>
+                                </form>
+							</div>
+						</form>		
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
 {% endblock %}
