@@ -104,9 +104,9 @@
 						</div>
 					</div>
 				</div>
-				{% for item in items %}
 				<div class="col-lg-9 col-xl-9">
 					<div class="row row-pb-md">
+					{% for item in items %}
 						<div class="col-lg-4 mb-4 text-center">
 							<div class="product-entry border">
 								<a href="{{ item.get_absolute_url }}" class="prod-img">
@@ -118,9 +118,8 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
 				{% endfor %}
+				</div>
 					<div class="row">
 						<div class="col-md-12 text-center">
 							<div class="block-27">

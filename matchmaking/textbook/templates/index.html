@@ -44,10 +44,13 @@
 				<div class="col-sm-8 offset-sm-2 text-center colorlib-heading">
 					<h2>Best Sellers</h2>
 				</div>
+			
 			</div>
-			{% for item in items %}
+			
 			<div class="row row-pb-md">
+			{% for item in items %}
 				<div class="col-lg-3 mb-4 text-center">
+				
 					<div class="product-entry border">
 						<a href="{{ item.get_absolute_url }}" class="prod-img">
 							<img src="{% static 'textbook/images/item-1.jpg' %}" class="img-fluid">
@@ -55,11 +58,13 @@
 						<div class="desc">
 							<h2><a href="{{ item.get_absolute_url }}">{{ item.name }}</a></h2>
 							<span class="price">{{ item.price }}</span>
+			
 						</div>
 					</div>
 				</div>
-			</div>
+
 			{% endfor %}
+			</div>
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<p><a href="../../textbook/featured" class="btn btn-primary btn-lg">Shop All Products</a></p>
