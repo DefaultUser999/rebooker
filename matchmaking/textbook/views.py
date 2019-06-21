@@ -41,9 +41,33 @@ def OrderComplete(request):
     template_name = 'order-complete.html'
     return render(request, 'order-complete.html')
     
-def ProductDetail(request):
-    template_name = 'product-detail.html'
-    return render(request, 'product-detail.html')
+
+
+def product_list(request):
+    
+    items = Item.objects.filter()
+    context = {
+        'items': items
+    }
+    return render(request, 'index.html', context)
+
+def product_list1(request):
+    
+    items = Item.objects.filter()
+    context = {
+        'items': items
+    }
+    return render(request, 'featured.html', context)
+
+def product_detail(request, item_id):
+    item = get_object_or_404(Item, pk=item_id)
+    context = {
+        'item': item
+    }
+    return render(request, 'product-detail.html', context)
+    
+def public_post_view(request, item_id):
+    print(item_id)    
 
 # /textbook/sell
 def sell(request):

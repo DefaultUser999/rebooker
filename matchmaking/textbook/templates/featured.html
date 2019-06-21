@@ -104,178 +104,23 @@
 						</div>
 					</div>
 				</div>
+				{% for item in items %}
 				<div class="col-lg-9 col-xl-9">
 					<div class="row row-pb-md">
 						<div class="col-lg-4 mb-4 text-center">
 							<div class="product-entry border">
-								<a href="../product-detail" class="prod-img">
+								<a href="{{ item.get_absolute_url }}" class="prod-img">
 									<img src="{% static 'textbook/images/item-1.jpg' %}" class="img-fluid">
 								</a>
 								<div class="desc">
-									<h2><a href="../product-detail">Textbook 1</a></h2>
-									<span class="price">$139.00</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 mb-4 text-center">
-							<div class="product-entry border">
-								<a href="../product-detail" class="prod-img">
-									<img src="{% static 'textbook/images/item-2.jpg' %}" class="img-fluid">
-								</a>
-								<div class="desc">
-									<h2><a href="../product-detail">Textbook 2</a></h2>
-									<span class="price">$139.00</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 mb-4 text-center">
-							<div class="product-entry border">
-								<a href="../product-detail" class="prod-img">
-									<img src="{% static 'textbook/images/item-3.jpg' %}" class="img-fluid">
-								</a>
-								<div class="desc">
-									<h2><a href="../product-detail">Textbook 3</a></h2>
-									<span class="price">$139.00</span>
-								</div>
-							</div>
-						</div>
-						<div class="w-100"></div>
-						<div class="col-lg-4 mb-4 text-center">
-							<div class="product-entry border">
-								<a href="../product-detail" class="prod-img">
-									<img src="{% static 'textbook/images/item-4.jpg' %}" class="img-fluid">
-								</a>
-								<div class="desc">
-									<h2><a href="../product-detail">Textbook 4</a></h2>
-									<span class="price">$139.00</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 mb-4 text-center">
-							<div class="product-entry border">
-								<a href="../product-detail" class="prod-img">
-									<img src="{% static 'textbook/images/item-5.jpg' %}" class="img-fluid">
-								</a>
-								<div class="desc">
-									<h2><a href="../product-detail">Textbook 5</a></h2>
-									<span class="price">$139.00</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 mb-4 text-center">
-							<div class="product-entry border">
-								<a href="../product-detail" class="prod-img">
-									<img src="{% static 'textbook/images/item-6.jpg' %}" class="img-fluid">
-								</a>
-								<div class="desc">
-									<h2><a href="../product-detail">Textbook 6</a></h2>
-									<span class="price">$139.00</span>
-								</div>
-							</div>
-						</div>
-						<div class="w-100"></div>
-						<div class="col-lg-4 mb-4 text-center">
-							<div class="product-entry border">
-								<a href="../product-detail" class="prod-img">
-									<img src="{% static 'textbook/images/item-7.jpg' %}" class="img-fluid">
-								</a>
-								<div class="desc">
-									<h2><a href="../product-detail">Textbook 7</a></h2>
-									<span class="price">$139.00</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 mb-4 text-center">
-							<div class="product-entry border">
-								<a href="../product-detail" class="prod-img">
-									<img src="{% static 'textbook/images/item-8.jpg' %}" class="img-fluid">
-								</a>
-								<div class="desc">
-									<h2><a href="../product-detail">Textbook 8</a></h2>
-									<span class="price">$139.00</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 mb-4 text-center">
-							<div class="product-entry border">
-								<a href="../product-detail" class="prod-img">
-									<img src="{% static 'textbook/images/item-9.jpg' %}" class="img-fluid">
-								</a>
-								<div class="desc">
-									<h2><a href="../product-detail">Textbook 9</a></h2>
-									<span class="price">$139.00</span>
-								</div>
-							</div>
-						</div>
-						<div class="w-100"></div>
-						<div class="col-lg-4 mb-4 text-center">
-							<div class="product-entry border">
-								<a href="../product-detail" class="prod-img">
-									<img src="{% static 'textbook/images/item-10.jpg' %}" class="img-fluid">
-								</a>
-								<div class="desc">
-									<h2><a href="../product-detail">Textbook 10</a></h2>
-									<span class="price">$139.00</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 mb-4 text-center">
-							<div class="product-entry border">
-								<a href="../product-detail" class="prod-img">
-									<img src="{% static 'textbook/images/item-11.jpg' %}" class="img-fluid">
-								</a>
-								<div class="desc">
-									<h2><a href="../product-detail">Textbook 11</a></h2>
-									<span class="price">$139.00</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 mb-4 text-center">
-							<div class="product-entry border">
-								<a href="../product-detail" class="prod-img">
-									<img src="{% static 'textbook/images/item-12.jpg' %}" class="img-fluid">
-								</a>
-								<div class="desc">
-									<h2><a href="../product-detail">Textbook 12</a></h2>
-									<span class="price">$139.00</span>
-								</div>
-							</div>
-						</div>
-						<div class="w-100"></div>
-						<div class="col-lg-4 mb-4 text-center">
-							<div class="product-entry border">
-								<a href="../product-detail" class="prod-img">
-									<img src="{% static 'textbook/images/item-13.jpg' %}" class="img-fluid">
-								</a>
-								<div class="desc">
-									<h2><a href="../product-detail">Textbook 13</a></h2>
-									<span class="price">$139.00</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 mb-4 text-center">
-							<div class="product-entry border">
-								<a href="../product-detail" class="prod-img">
-									<img src="{% static 'textbook/images/item-14.jpg' %}" class="img-fluid">
-								</a>
-								<div class="desc">
-									<h2><a href="../product-detail">Textbook 14</a></h2>
-									<span class="price">$139.00</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 mb-4 text-center">
-							<div class="product-entry border">
-								<a href="../product-detail" class="prod-img">
-									<img src="{% static 'textbook/images/item-15.jpg' %}" class="img-fluid">
-								</a>
-								<div class="desc">
-									<h2><a href="../product-detail">Textbook 15</a></h2>
-									<span class="price">$139.00</span>
+									<h2>"{{ item.get_absolute_url }}">{{ item.name }}</a></h2>
+									<span class="price">{{ item.price }}</span>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
+				{% endfor %}
 					<div class="row">
 						<div class="col-md-12 text-center">
 							<div class="block-27">

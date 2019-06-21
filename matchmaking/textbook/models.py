@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AbstractUser
 from django.utils.timezone import now
+from django.urls import reverse
+
 
 class CustomUser(AbstractUser):
     # add additional fields in here
@@ -31,5 +33,9 @@ class Item(models.Model):
     # title = models.CharField(max_length=100)
     # description = models.TextField(blank=True, null=True)
     # featured    = models.BooleanField(default=False) # null=True, default=True
+
+    def get_absolute_url(self):
+        return reverse('product_detail', kwargs={'item_id': self.id})
+
     def print_info(self):
         return "seller: " + self.seller + "Buyer: " + self.buyer

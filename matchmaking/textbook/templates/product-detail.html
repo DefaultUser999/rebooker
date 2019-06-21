@@ -59,9 +59,9 @@
 					</div>
 					<div class="col-sm-4">
 						<div class="product-desc">
-							<h3>Textbook 1</h3>
+							<h3>{{ item.name }}</h3>
 							<p class="price">
-								<span>$68.00</span> 
+								<span>Price: {{ item.price }}</span> 
 								<span class="rate">
 									<i class="icon-star-full"></i>
 									<i class="icon-star-full"></i>
@@ -75,7 +75,7 @@
 							<div>
                                 <div>
                                     <h4>Author</h4>
-                                    <p>Person A</p>
+                                    <p>{{item.author }}</p>
                                 </div>
 							</div>
                      <div class="input-group mb-4">
